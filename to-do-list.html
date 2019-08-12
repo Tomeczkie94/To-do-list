@@ -11,9 +11,11 @@
       <h1 class="big-header">Your to-do list:</h1>
     </div>
     <div>
-      <label for="text-field" class="label">Please enter your task:</label>
+      <label for="text-field" class="label" id="label-form">Please enter your task:</label>
       <input type="text" name="text-field" id="text-field" required>
-      <button class="button">Submit</button>
+      <button class="button" type="submit" id="submit-button" value="submit" onclick="createList(event)">Submit</button>
+      <ul name="checklist" id="checklist">
+      </ul>
     </div>
   </body>
 </html>
