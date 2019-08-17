@@ -1,8 +1,7 @@
 function createList(event) {
-  event.preventDefault();
-  let input = document.querySelector('#text-field').value;
-  let newListItem = document.createElement('li');
-  let newContent = document.createTextNode(input);
-  let checklist = document.querySelector('#checklist');
+  const input = document.querySelector('#text-field').value;
+  const newListItem = document.createElement('li');
+  const newContent = document.createTextNode(input);
+  const checklist = document.querySelector('#checklist');
   checklist.appendChild(newListItem);
 }
