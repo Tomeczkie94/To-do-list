@@ -1,16 +1,18 @@
-document.getElementById('submit-button').onclick = function() {
+const input = document.getElementById('text-field');
+
+const createListItem = function() {
   const listItem = document.createElement('li');
-  const text = document.getElementById('text-field').value;
-  const textnode = document.createTextNode(text);
-  listItem.appendChild(textnode);
+  const { value: text } = input;
+  const textNode = document.createTextNode(text);
+  listItem.appendChild(textNode);
   document.getElementById('checklist').appendChild(listItem);
-  document.getElementById('my-form').reset();
+  input.value = '';
 }
 
-const input = document.getElementById('text-field');
+document.getElementById('submit-button').onclick = createListItem;
+
 input.addEventListener('keyup', function(event) {
   if (event.keyCode === 13) {
-    event.preventDefault();
-    document.getElementById('submit-button').click();
+    createListItem();
   }
 });
