@@ -4,6 +4,7 @@
   --medium-grn: #0ea49a;
   --red: #bd0000;
   --orange: #ff8000;
+  --cyan: #b4eff6;
 }
 
 html,
@@ -61,4 +62,9 @@ input[type="text"], textarea {
   color: var(--orange);
   background-color: var(--red);
   border-color: var(--orange);
+}
+
+.completed {
+  color: var(--cyan);
+  text-decoration: line-through;
 }
