@@ -4,16 +4,14 @@ const createTask = function() {
   const liCreate = document.createElement('li');
   const spanCreate = document.createElement('span');
   const classCheck = function(event) {
-    if (spanCreate.classList.contains('uncompleted')) {
-      spanCreate.classList.remove('uncompleted');
+    if (spanCreate.classList.contains('task-item' && 'completed')) {
+      spanCreate.classList.remove('completed');
+    }
+    else if (spanCreate.classList.contains('task-item')) {
       spanCreate.classList.add('completed');
     }
-    else if (spanCreate.classList.contains('completed')) {
-      spanCreate.classList.remove('completed');
-      spanCreate.classList.add('uncompleted');
-    }
   };
-  spanCreate.classList.add('uncompleted');
+  spanCreate.classList.add('task-item');
   spanCreate.addEventListener('click', classCheck);
   const { value: text } = input;
   document.getElementById('checklist').appendChild(liCreate);
@@ -22,8 +20,6 @@ const createTask = function() {
   spanCreate.appendChild(textNode);
   input.value = '';
 }
-
-
 
 document.getElementById('submit-button').onclick = createTask;
 input.addEventListener('keyup', function(event) {

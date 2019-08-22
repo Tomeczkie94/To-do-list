@@ -69,6 +69,6 @@ input[type="text"], textarea {
   text-decoration: line-through;
 }
 
-.completed, .uncompleted {
+.task-item, .uncompleted {
   cursor: pointer;
 }
