@@ -1,30 +1,30 @@
 const input = document.getElementById('text-field');
 
-const createListItem = function() {
-  const listItem = document.createElement('li');
-  const listItemSpan = document.createElement('span');
-  listItemSpan.classList.add('uncompleted');
-  listItemSpan.addEventListener('click', function(event) {
-    if (listItemSpan.classList.contains('uncompleted')) {
-      listItemSpan.classList.remove('uncompleted');
-      listItemSpan.classList.add('completed');
+const createTask = function() {
+  const liCreate = document.createElement('li');
+  const spanCreate = document.createElement('span');
+  spanCreate.classList.add('uncompleted');
+  spanCreate.addEventListener('click', function(event) {
+    if (spanCreate.classList.contains('uncompleted')) {
+      spanCreate.classList.remove('uncompleted');
+      spanCreate.classList.add('completed');
     }
-    else if (listItemSpan.classList.contains('completed')) {
-      listItemSpan.classList.remove('completed');
-      listItemSpan.classList.add('uncompleted');
+    else if (spanCreate.classList.contains('completed')) {
+      spanCreate.classList.remove('completed');
+      spanCreate.classList.add('uncompleted');
     }
   });
   const { value: text } = input;
-  document.getElementById('checklist').appendChild(listItem);
+  document.getElementById('checklist').appendChild(liCreate);
   const textNode = document.createTextNode(text);
-  listItem.appendChild(listItemSpan);
-  listItemSpan.appendChild(textNode);
+  liCreate.appendChild(spanCreate);
+  spanCreate.appendChild(textNode);
   input.value = '';
 }
 
-document.getElementById('submit-button').onclick = createListItem;
+document.getElementById('submit-button').onclick = createTask;
 input.addEventListener('keyup', function(event) {
   if (event.keyCode === 13) {
-    createListItem();
+    createTask();
   }
 });

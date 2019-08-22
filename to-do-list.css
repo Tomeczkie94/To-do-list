@@ -68,3 +68,7 @@ input[type="text"], textarea {
   color: var(--cyan);
   text-decoration: line-through;
 }
+
+.completed, .uncompleted {
+  cursor: pointer;
+}
