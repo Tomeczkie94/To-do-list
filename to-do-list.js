@@ -13,7 +13,7 @@ const createTask = function() {
   };
   spanCreate.classList.add('task-item');
   spanCreate.addEventListener('click', classCheck);
-  const { value: text } = input;
+  const text = input.value;
   document.getElementById('checklist').appendChild(liCreate);
   const textNode = document.createTextNode(text);
   liCreate.appendChild(spanCreate);
