@@ -1,19 +1,17 @@
 const input = document.getElementById('text-field');
-
+const storage = window.localStorage;
 const createTask = function() {
   const liCreate = document.createElement('li');
   const spanCreate = document.createElement('span');
-
   spanCreate.classList.add('task-item');
-
   spanCreate.addEventListener('click', classCheck);
-
   const text = input.value;
   document.getElementById('checklist').appendChild(liCreate);
   const textNode = document.createTextNode(text);
   liCreate.appendChild(spanCreate);
   spanCreate.appendChild(textNode);
   input.value = '';
+  storage.setItem('liCreate');
 }
 
 const classCheck = function() {
