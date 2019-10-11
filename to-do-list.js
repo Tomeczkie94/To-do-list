@@ -1,5 +1,7 @@
 const input = document.getElementById('text-field');
-const storage = window.localStorage;
+// const storage = window.localStorage;
+const submitButton = document.getElementById('submit-button');
+
 const createTask = function() {
   const liCreate = document.createElement('li');
   const spanCreate = document.createElement('span');
@@ -22,8 +24,28 @@ const classCheck = function() {
     this.classList.add('completed');
   }
 };
+/*
+const locStorageAdd = function() {
+  document.querySelector('submitButton').addEventListener('submit', function(e) {
+    const task = document.querySelector('input').value;
 
-document.getElementById('submit-button').onclick = createTask;
+    let tasks;
+    if(localStorage.getItem('tasks') === null) {
+      tasks = [];
+    }
+    else {
+      tasks = JSON.parse(localStorage.getItem('tasks'));
+    }
+    tasks.push(task);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  })
+};
+
+const locStorageGet = function() {
+
+}
+*/
+submitButton.onclick = createTask; /* locStorageAdd; */
 input.addEventListener('keyup', function(event) {
   if (event.keyCode === 13) {
     createTask();
